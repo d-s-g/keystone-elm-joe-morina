@@ -8,7 +8,8 @@ const inProduction = (process.env.NODE_ENV === 'production');
 module.exports = {
   entry: {
       app: [
-        './src/js/main.js',
+        './src/js/app.js',
+        './src/js/index.elm',
         './src/scss/styles.scss'
       ]
   },
@@ -36,8 +37,19 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         loader: "babel-loader"
-      }
-    ]
+      },
+      {
+        test:    /\.elm$/,
+        exclude: [/elm-stuff/, /node_modules/],
+        loader:  'elm-webpack-loader?verbose=true&warn=true',
+      },
+    ],
+    noParse: /\.elm$/,
+  },
+
+  devServer: {
+    inline: true,
+    stats: { colors: true },
   },
 
   plugins: [
