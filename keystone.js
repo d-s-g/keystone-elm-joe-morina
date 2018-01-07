@@ -18,12 +18,11 @@ keystone.init({
 	'sass': 'public',
 	'static': 'public',
 	'favicon': 'public/favicon.ico',
-	'views': 'templates/views',
 	'view engine': 'twig',
 
 	'twig options': { method: 'fs' },
 	'custom engine': Twig.render,
-
+	'views': './',
 	'auto update': true,
 	'session': true,
 	'auth': true,
@@ -55,8 +54,10 @@ keystone.set('nav', {
 	ys: 'ys',
 });
 
+keystone.set('cors allow origin', true);
+keystone.set('cors allow methods', true);
+keystone.set('cors allow headers', true);
+
 // Start Keystone to connect to your database and initialise the web server
-
-
 
 keystone.start();
