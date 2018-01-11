@@ -1,12 +1,14 @@
 module Models exposing (..)
 
+import RemoteData exposing (WebData)
+
 type alias Model = 
-    { posts : List Post
+    { posts : WebData (List Post)
     }
 
 initialModel : Model
 initialModel =
-    { posts = [Post "15" "test" "test" 1 "today" "test"]
+    { posts = RemoteData.Loading 
     }
     
 type alias Content =
@@ -19,9 +21,8 @@ type alias PostId =
 
 type alias Post =
     { id : PostId
-    , title : String
     , slug : String
-    , v : Int
+    , title : String
     , publishedDate : String
-    , content : String
+    , content : Content
     }

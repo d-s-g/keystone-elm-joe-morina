@@ -1,6 +1,7 @@
 module Main exposing (main)
 
 import Html
+import Commands exposing (fetchPosts)
 import Models exposing (Model, initialModel)
 import Msgs exposing (Msg)
 import Update exposing (update)
@@ -9,7 +10,7 @@ import View exposing (view)
 
 init : ( Model, Cmd Msg )
 init =
-    ( initialModel, Cmd.none )
+    ( initialModel, fetchPosts )
 
 
 subscriptions model =

@@ -3,7 +3,7 @@ module View exposing (..)
 import Html exposing (..)
 import Msgs exposing (Msg)
 import Models exposing (Model)
-import Posts.List
+import Posts.List exposing (viewPosts)
 
 viewHeader : Html Msg
 viewHeader =
@@ -17,12 +17,6 @@ viewHeader =
             ]
         ]
 
--- viewPosts : Html Msg
--- viewPosts = div []
---     [
---         text "Posts"
---     ]
-
 viewFooter : Html Msg
 viewFooter =
     footer []
@@ -32,6 +26,6 @@ view : Model -> Html Msg
 view model = 
     div []
         [ viewHeader
-        , Posts.List.viewPosts model.posts
+        , viewPosts model.posts
         , viewFooter
         ]
