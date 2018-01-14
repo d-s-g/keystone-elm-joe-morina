@@ -2,14 +2,19 @@ module Models exposing (..)
 
 import RemoteData exposing (WebData)
 
-type alias Model = 
-    { posts : WebData (List Post)
+initialModel : Route -> Model
+initialModel route =
+    { posts = RemoteData.Loading
+    , route = route
+    , changes = 0
     }
 
-initialModel : Model
-initialModel =
-    { posts = RemoteData.Loading 
+type alias Model = 
+    { posts : WebData (List Post)
+    , route : Route
+    , changes : Int
     }
+
     
 type alias Content =
     { brief : String
@@ -26,3 +31,8 @@ type alias Post =
     , publishedDate : String
     , content : Content
     }
+
+type Route
+    = HomeRoute
+    | ContactRoute
+    | NotFoundRoute
