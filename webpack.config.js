@@ -9,9 +9,14 @@ var TARGET_ENV = process.env.npm_lifecycle_event === 'prod' ? 'production' : 'de
 var filename = (TARGET_ENV == 'production') ? '[name]-[hash].js' : '[name].js';
 
 var common = {
-    entry: './src/js/app.js',
+    entry: { 
+        app : [
+        './src/js/app.js'
+        ]
+    },
     output: {
-        //path: path.join(__dirname, "public"),
+        path: path.join(__dirname, "public"),
+        publicPath: "/",
         // webpack -p automatically adds hash when building for production
         filename: filename
     },
@@ -113,9 +118,9 @@ if (TARGET_ENV === 'development') {
         devServer: {
             inline: true,
             stats: 'errors-only',
-            contentBase: path.join(__dirname, "src/images"),
+            historyApiFallback: true,
+            // publicPath: '/',
             // For SPAs: serve index.html in place of 404 responses
-            //historyApiFallback: true
         }
     });
 }

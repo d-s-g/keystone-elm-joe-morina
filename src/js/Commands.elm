@@ -4,7 +4,7 @@ import Http
 import Json.Decode as Decode
 import Json.Decode.Pipeline exposing (decode, required, optional)
 import Msgs exposing (Msg)
-import Models exposing (PostId, Post, Content)
+import Models exposing (PostId, Post, Content, CloudImage)
 import RemoteData
 
 fetchPosts : Cmd Msg
@@ -26,6 +26,7 @@ postDecoder =
     decode Post
         |> required "_id" Decode.string
         |> required "slug" Decode.string
+        |> required "image" imageDecoder
         |> required "title" Decode.string
         |> required "publishedDate" Decode.string
         |> required "content" contentDecoder
@@ -35,3 +36,8 @@ contentDecoder =
     decode Content
         |> required "brief" Decode.string
         |> required "extended" Decode.string
+
+imageDecoder : Decode.Decoder CloudImage
+imageDecoder =
+    decode CloudImage
+        |> required "secure_url" Decode.string

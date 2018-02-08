@@ -21,12 +21,20 @@ type alias Content =
     , extended : String
     }
 
+type alias CloudImage =
+    { secure_url : String  
+    }
+    
 type alias PostId = 
     String 
 
+type alias PostSlug =
+    String
+
 type alias Post =
     { id : PostId
-    , slug : String
+    , slug : PostSlug
+    , image : CloudImage
     , title : String
     , publishedDate : String
     , content : Content
@@ -34,5 +42,6 @@ type alias Post =
 
 type Route
     = HomeRoute
+    | PostSingleRoute PostSlug
     | ContactRoute
     | NotFoundRoute

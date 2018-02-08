@@ -1,6 +1,6 @@
 'use strict';
 
-require("./styles.scss");
+require("../scss/styles.scss");
 
 var Elm = require('./Main');
 var app = Elm.Main.fullscreen();

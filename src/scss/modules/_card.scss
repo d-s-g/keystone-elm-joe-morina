@@ -1,0 +1,118 @@
+@mixin overlay {
+    @content;
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+@mixin border($color, $width, $height) {
+    height: $height;
+    width: $width;
+    background-color: $color;
+}
+
+.container .card:not(.card--hero) .card-inner {
+    display: flex;
+    justify-content: flex-start;
+    text-align: left;
+}
+
+.card {
+    max-width: 1100px;
+    margin: 0 auto;
+    position: relative;
+    
+    &--hero {
+        max-width: none;
+        border: none;
+        z-index: 0;
+
+        &:after {
+            @include overlay {
+                background: linear-gradient(90deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2));
+            }
+        }
+    }
+    
+    &__border {
+        @include border($gold, 150px, 1px);    
+        
+        &--hero {
+            margin: 0 auto;
+            @include border($gold, 200px, 2px);  
+        }
+    }
+
+    &-inner {
+        padding: 3rem;
+        text-align: center;    
+        margin: 3rem 0;
+        border-radius: 3px;
+        min-height: 25vh;
+        @include box-shadow;
+        @include background-image;
+
+        &--hero {
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            height: 76vh;
+            margin-top: 0;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+        }
+    }
+
+    &__title--hero {
+        color: #ffffff;
+        z-index: 1;
+        margin: 0;
+        padding: 2rem 0;
+        position: relative;
+        box-sizing: border-box;
+    }
+
+    &__tagline--hero {
+        color: #ffffff;
+        z-index: 1;
+        margin: 0;
+        padding: 2rem 0;
+    }
+
+    &--first {
+        margin: 9vh auto 0;
+    }
+
+    &__content {
+        display: none;
+    }
+
+    &__date {
+        font-size: 12px;
+        padding-top: 2rem;
+    }
+
+    &__snippit {
+        max-width: 250px;
+        z-index: 1;
+    }
+
+    &__title {
+        margin: 0;
+        padding: 2rem 0;
+        position: relative;
+    }
+
+    &:not(.card--hero):after {
+        @include overlay {
+            background: linear-gradient(90deg, rgba(255, 255, 255, 1) 25%, rgba(255, 255, 255, 0) 60%);
+        }    
+    }
+
+}

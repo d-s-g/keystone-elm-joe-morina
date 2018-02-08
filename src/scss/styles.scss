@@ -1,4 +1,11 @@
-$primary: white;
-body {
-  background-color: $primary;
-}
+@import 'base/variables';
+@import 'base/mixins';
+@import 'base/typography';
+@import 'base/layout';
+
+@import 'modules/header';
+@import 'modules/accents';
+@import 'modules/hero';
+@import 'modules/card';
+@import 'modules/post';
+@import 'modules/footer';
