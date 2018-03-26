@@ -119,7 +119,6 @@ if (TARGET_ENV === 'development') {
             inline: true,
             stats: 'errors-only',
             historyApiFallback: true,
-            // publicPath: '/',
             // For SPAs: serve index.html in place of 404 responses
         }
     });

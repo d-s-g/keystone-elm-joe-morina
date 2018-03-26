@@ -1,9 +1,30 @@
 body {
     margin: 0;
+    background-image: url('http://res.cloudinary.com/dvgpcelrm/image/upload/v1519866148/topography_n3kmne.png');
+    
+
+    > pre {
+        display: none;
+        height: 0;
+        width: 0;
+    }
 }
 
 .container {
     position: relative;
-    overflow: hidden;
-    z-index: 0;
 }
+
+// .container {
+//     &:after {
+//         content: '';
+//         position: absolute;
+//         background-image: url('http://res.cloudinary.com/dvgpcelrm/image/upload/v1518649232/contours_w2hfgu.svg');
+//         background-size: contain;
+//         top: 0vh;
+//         left: 0;
+//         height: 100vh;
+//         width: 100%;
+//         z-index: -1;
+//         opacity: 0.2;
+//     }
+// }

@@ -8,3 +8,4 @@ type Msg
     = OnFetchPosts (WebData (List Post))
     | ChangeLocation String
     | OnLocationChange Location
+    | ImageLoaded

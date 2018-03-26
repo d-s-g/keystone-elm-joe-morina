@@ -20,3 +20,5 @@ update msg model =
                     parseLocation location
             in
                 ( { model | route = newRoute }, Cmd.none )
+        Msgs.ImageLoaded ->
+            ( { model | info = "Image loaded successfully!" }, Cmd.none )

@@ -7,12 +7,14 @@ initialModel route =
     { posts = RemoteData.Loading
     , route = route
     , changes = 0
+    , info = ""
     }
 
 type alias Model = 
     { posts : WebData (List Post)
     , route : Route
     , changes : Int
+    , info : String
     }
 
     

@@ -19,6 +19,10 @@
 
 h1 {
     @include font-header-base(40px, 200);
+
+    @include responsive(768px) {
+        @include font-header-base(32px, 200);        
+    }
 }
 
 h2 {
