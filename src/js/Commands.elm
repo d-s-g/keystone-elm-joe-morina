@@ -15,7 +15,7 @@ fetchPosts =
     |> Cmd.map Msgs.OnFetchPosts
 
 fetchPostsUrl : String
-fetchPostsUrl = "http://localhost:8888/api/post/list"
+fetchPostsUrl = "/api/post/list"
 
 postsDecoder : Decode.Decoder (List Post) 
 postsDecoder =
