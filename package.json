@@ -36,7 +36,7 @@
   },
   "scripts": {
     "lint": "eslint .",
-    "start": "npm run dev",
+    "start": "node keystone.js",
     "headless-cms": "nodemon keystone.js",
     "dev": "webpack-dev-server --hot --port 3333",
     "build": "webpack",
