@@ -7,3 +7,5 @@ yarn-error.log
 yarn.lock
 .env
 .DS_Store
+updates/0.0.1-admins.js
+public

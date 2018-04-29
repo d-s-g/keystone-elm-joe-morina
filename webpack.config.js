@@ -22,7 +22,7 @@ var common = {
     },
     plugins: [new HTMLWebpackPlugin({
             // using .ejs prevents other loaders causing errors
-            template: './entry.html',
+            template: './index.ejs',
             // inject details of output file at end of body
             inject: 'body'
         })],
@@ -129,17 +129,18 @@ if (TARGET_ENV === 'production') {
     module.exports = merge(common, {
         plugins: [
             // Delete everything from output directory and report to user
-            new CleanWebpackPlugin(['dist'], {
+            new CleanWebpackPlugin(['public'], {
               root:     __dirname,
               exclude:  [],
               verbose:  true,
               dry:      false
             }),
-            new CopyWebpackPlugin([
-                {
-                    from: 'src/assets'
-                }
-            ]),
+            // new CopyWebpackPlugin([
+            //     {
+            //         from: 'index.html',
+            //         to: 'index.html'
+            //     }
+            // ]),
             // TODO update to version that handles =>
             new webpack.optimize.UglifyJsPlugin()
         ],

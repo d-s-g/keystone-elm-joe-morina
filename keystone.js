@@ -17,7 +17,6 @@ keystone.init({
 
 	'sass': 'public',
 	'static': 'public',
-	'favicon': 'public/favicon.ico',
 	'view engine': 'twig',
 
 	'twig options': { method: 'fs' },
