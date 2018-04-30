@@ -2,6 +2,7 @@
   "root": "public",
   "clean_urls": true,
   "routes": {
-    "/**": "index.html"
+    "/*.html": "index.html",
+    "/posts/**": "index.html"
   }
 }
