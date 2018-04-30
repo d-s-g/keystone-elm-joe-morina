@@ -5,10 +5,10 @@
     "/**": "index.html"
   },
   "proxies": {
-    "/api/post/list": {
-      "origin": "https://keystone-elm-joe-morina.herokuapp.com/api/post/list"
+    "/api/": {
+      "origin": "https://keystone-elm-joe-morina.herokuapp.com/api"
     }
-  }, "/keystone": {
+  }, "/keystone/": {
     "origin": "https://keystone-elm-joe-morina.herokuapp.com/keystone"    
   } 
 }
