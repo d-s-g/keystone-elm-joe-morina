@@ -6,7 +6,7 @@
   },
   "proxies": {
     "/api/": {
-      "origin": "https://keystone-elm-joe-morina.herokuapp.com/api"
+      "origin": "keystone-elm-joe-morina.herokuapp.com/api"
     }
   }
 }
