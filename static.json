@@ -4,10 +4,5 @@
   "routes": {
     "/*": "index.html",
     "/posts/**": "index.html"
-  },
-  "proxies": {
-    "/api/post/list/": {
-      "origin": "https://keystone-elm-joe-morina.herokuapp.com/"
-    }
   }
 }
