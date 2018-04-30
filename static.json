@@ -1,8 +1,11 @@
 {
   "root": "public/",
-  "https_only": true,
   "routes": {
-    "/index": "index.html",
-    "/posts/*": "index.html"
+    "/**": "index.html"
+  },
+  "proxies": {
+    "/api/": {
+      "origin": "https://keystone-elm-joe-morina.herokuapp.com"
+    }
   }
 }
