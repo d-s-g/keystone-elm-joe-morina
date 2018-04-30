@@ -1,9 +1,0 @@
-{
-  "root": "public",
-  "clean_urls": true,
-  "routes": {
-    "/index": "index.html",
-    "/contact": "index.html",
-    "/posts/**": "index.html"
-  }
-}
