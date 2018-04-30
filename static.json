@@ -1,11 +1,12 @@
 {
   "root": "public/",
+  "https_only": true,
   "routes": {
     "/**": "index.html"
   },
   "proxies": {
     "/api/": {
-      "origin": "https://keystone-elm-joe-morina.herokuapp.com"
+      "origin": "https://keystone-elm-joe-morina.herokuapp.com/api"
     }
   }
 }
