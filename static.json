@@ -2,7 +2,8 @@
   "root": "public",
   "clean_urls": true,
   "routes": {
-    "/*": "index.html",
+    "/index": "index.html",
+    "/contact": "index.html",
     "/posts/**": "index.html"
   }
 }
