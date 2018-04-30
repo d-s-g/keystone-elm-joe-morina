@@ -15,7 +15,7 @@ fetchPosts =
     |> Cmd.map Msgs.OnFetchPosts
 
 fetchPostsUrl : String
-fetchPostsUrl = "/api/post/list"
+fetchPostsUrl = "https://keystone-elm-joe-morina.herokuapp.com/api/post/list"
 
 postsDecoder : Decode.Decoder (List Post) 
 postsDecoder =
