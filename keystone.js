@@ -13,7 +13,7 @@ var Twig = require('twig');
 keystone.init({
 	'name': 'Starter',
 	'brand': 'Starter',
-	// 'port': 8888,
+	'port': process.env.PORT || 8888,
 	'static': ['public'],
 	'view engine': 'twig',
 
