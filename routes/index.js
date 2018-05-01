@@ -29,16 +29,18 @@ keystone.pre('render', middleware.flashMessages);
 // Import Route Controllers
 var routes = {
 	views: importRoutes('./views'),
-	api: importRoutes('./api')
+	api: importRoutes('./api'),
 };
+
+keystone.redirect('/post/**', '/');
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	// Views
 	// Route / to the blog all api end point. This is the defualt use case,
 	// as we want to handle routing on the js framework side.
-
-	app.get('/', keystone.middleware.api, routes.views.index);
+	app.get('/', routes.views.index);
+	app.get('/post', routes.views.index);
 	app.get('/api/post/list', [keystone.middleware.cors, keystone.middleware.api], routes.api.posts.list);
 	//turn these back on by need.
 

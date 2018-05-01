@@ -14,9 +14,7 @@ keystone.init({
 	'name': 'Starter',
 	'brand': 'Starter',
 	// 'port': 8888,
-
-	'sass': 'public',
-	'static': 'public',
+	'static': ['public'],
 	'view engine': 'twig',
 
 	'twig options': { method: 'fs' },
