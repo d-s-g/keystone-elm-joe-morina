@@ -1,11 +1,11 @@
 module Posts.List exposing (..)
 
 import Html exposing (..)
-import Posts.Svg exposing (..)
 import Posts.Helpers exposing (cloudnaryHelper, dateHelper)
 import Html.Attributes exposing (href, class, property, style)
 import Routing exposing (postSinglePath)
 import Html.Events exposing (onWithOptions, on)
+import Html.Events.Extra exposing (onClickPreventDefault)
 import Json.Decode as Decode
 import Json.Encode exposing (string)
 import Msgs exposing (Msg)
@@ -55,7 +55,7 @@ list posts =
         [ div [] (List.map postRow posts) ]
 
 onReadmoreClick : msg -> Attribute msg
-onReadmoreClick message = 
+onReadmoreClick message =
     let 
         options = 
             { stopPropagation = False
@@ -86,4 +86,4 @@ postSingleLink postslug =
         path =
             postSinglePath postslug
     in
-        a [ class "readmore" , href path][ text "Read More" ]
+        a [ class "readmore", onClickPreventDefault (Msgs.ChangeLocation path), href path ][ text "Read More" ]
