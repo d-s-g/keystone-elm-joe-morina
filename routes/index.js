@@ -19,6 +19,7 @@
  */
 
 var keystone = require('keystone');
+var path = require("path")
 var middleware = require('./middleware');
 var importRoutes = keystone.importer(__dirname);
 
@@ -32,16 +33,16 @@ var routes = {
 	api: importRoutes('./api'),
 };
 
-keystone.redirect('/post/**', '/');
-
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	// Views
 	// Route / to the blog all api end point. This is the defualt use case,
 	// as we want to handle routing on the js framework side.
 	app.get('/', routes.views.index);
-	app.get('/post', routes.views.index);
 	app.get('/api/post/list', [keystone.middleware.cors, keystone.middleware.api], routes.api.posts.list);
+	app.get('*', function(req, res) {
+		res.sendFile(path.join(__dirname + '/../public/index.html'));
+	});
 	//turn these back on by need.
 
 	// NOTE: To protect a route so that only admins can see it, use the requireUser middleware:
