@@ -3,4 +3,11 @@
     margin: 0 auto;
     padding: 3.2rem 1rem;
     min-height: calc(40vh - (6.2rem + 240px));
+
+    a {
+        color: $gold;
+        &:hover {
+            color: #201F1A
+        }
+    }
 }
