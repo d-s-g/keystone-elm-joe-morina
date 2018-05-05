@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Alike|Arimo');
+//@import url('https://fonts.googleapis.com/css?family=Alike|Arimo');
 
 @mixin font-header-base($size, $weight) {
     font-family: 'Alike', serif;
@@ -7,6 +7,8 @@
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     will-change: letter-spacing;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 @mixin font-base($size, $weight) {
@@ -15,13 +17,15 @@
     font-weight: $weight;
     color: #201F1A;
     line-height: 1.6em;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 h1 {
-    @include font-header-base(40px, 200);
+    @include font-header-base(26px, 200);
 
     @include responsive(768px) {
-        @include font-header-base(32px, 200);        
+        @include font-header-base(32px, 400);        
     }
 }
 

@@ -41,6 +41,7 @@ notFoundView =
     div []
         [ text "Not Found"
         ]
+        
 allData : Post -> Html Msg
 allData post
     = pre []

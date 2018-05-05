@@ -20,7 +20,7 @@ viewHero =
             [ div [class "card-inner background-image card-inner--hero", on "load" (Decode.succeed Msgs.ImageLoaded)]
                 [ h1 [class "card__title--hero"] [text "Joe Morina"]
                 , div [class "card__border--hero"] []
-                , p [class "card__tagline--hero"] [text "blurb here"]
+                , p [class "card__tagline--hero"] [text "Virginia Sea Grant graduate research fellow, and PhD student at VCU"]
                 ]
             ]
         ]

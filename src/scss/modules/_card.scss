@@ -38,7 +38,7 @@
 
         &:after {
             @include overlay {
-                background: linear-gradient(90deg, rgba(42, 65, 78, 0.2), rgba(40, 63, 76, 0.2));
+                background: linear-gradient(90deg, rgba(0, 163, 255, 0.3), rgba(0, 163, 255, 0.3));
             }
         }
     }
@@ -48,7 +48,11 @@
         
         &--hero {
             margin: 0 auto;
-            @include border($gold, 200px, 2px);  
+            @include border($gold, 177px, 2px);
+
+            @include responsive(768px) {
+                @include border($gold, 235px, 2px);
+            }
         }
     }
 
@@ -65,7 +69,7 @@
             display: flex;
             justify-content: center;
             flex-direction: column;
-            height: 76vh;
+            height: calc(60vh - 80px);
             margin-top: 0;
             border-top: none;
             border-left: none;
@@ -80,6 +84,10 @@
         padding: 2rem 0;
         position: relative;
         box-sizing: border-box;
+        font-size: 36px;
+        @include responsive(768px) {
+            font-size: 48px;
+        }
     }
 
     &__tagline--hero {
@@ -87,10 +95,17 @@
         z-index: 1;
         margin: 0;
         padding: 2rem 0;
+        font-size: 16px;
+        font-weight: bold;
+        letter-spacing: 0.5px;
+
+        @include responsive(768px) {
+            font-size: 18px;
+        }
     }
 
     &--first {
-        margin: 9vh auto 0;
+        margin: 80px auto 0;
     }
 
     &__brief p {
@@ -104,11 +119,21 @@
     }
 
     &__snippit {
-        max-width: 350px;  
         z-index: 1;
 
-        @include responsive(968px) {
-            max-width: 400px;  
+        @include responsive(768px) {
+            max-width: 48%; 
+        }
+
+        @include responsive(1440px) {
+            max-width: 25vw;  
+        }
+
+        a {
+            color: $gold;
+            &:hover {
+                color: #201F1A;
+            }
         }
     }
 
@@ -124,6 +149,10 @@
 
             @include responsive(768px) {
                 background: linear-gradient(90deg, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 80%);
+            }
+
+            @include responsive(1440px) {
+                background: linear-gradient(90deg, rgba(255, 255, 255, 1) 30vw, rgba(255, 255, 255, 0) 80%);
             }
         }    
     }

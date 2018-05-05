@@ -5,7 +5,7 @@ header {
     width: 100%;
     background-color: #ffffff;
     z-index: 5;
-    height: 9vh;
+    height: 80px;
 }
 
 .menu-header {
@@ -18,13 +18,12 @@ header {
             -webkit-box-flex: 1;
             -ms-flex-positive: 1;
             flex-grow: 1;
-            text-align: center;
-
+            height: 80px;
         }
 
         &__item {
 
-            @include font-header-base(16px, bold);
+            @include font-header-base(16px, 500);
             list-style: none;
             display: inline-block;
             color: #201F1A;
@@ -35,9 +34,9 @@ header {
 
             display: block;
             padding: 1.2rem;
-            color: #000;
+            color: #201F1A;
             transition: color .3s;
-            font-weight: bold;
+            letter-spacing: 0.8px;
 
         }
 }
